@@ -3,7 +3,7 @@ class Solution {
         byte x = 0;
         for(String operation: operations)
         {
-            if(operation.contains("++"))
+            if(operation.contains("+"))
             {
                 x+=1;
             }
