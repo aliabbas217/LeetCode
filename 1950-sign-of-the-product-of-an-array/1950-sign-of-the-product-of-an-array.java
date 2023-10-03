@@ -9,8 +9,6 @@ class Solution {
             if(nums[i] < 0)
                 negatives++;
         }
-        if(negatives%2 == 0)
-            return 1;
-        return -1;
+        return (negatives % 2 == 0) ? 1 : -1;
     }
 }
