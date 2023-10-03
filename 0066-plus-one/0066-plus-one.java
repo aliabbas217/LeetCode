@@ -1,9 +1,8 @@
 class Solution {
     public int[] plusOne(int[] digits)
     {
-        byte remainder = 0;
+        byte remainder = 1;
         byte totalDigits = (byte)digits.length;
-        digits[totalDigits -1] += 1; 
         for(int i = totalDigits-1; i >= 0; i--)
         {
             digits[i] = digits[i] + remainder;
