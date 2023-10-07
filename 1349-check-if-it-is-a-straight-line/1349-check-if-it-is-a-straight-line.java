@@ -1,18 +1,12 @@
 class Solution {
-    public boolean checkStraightLine(int[][] c) { 
-        // for(int i = 2; i < c.length; i++)
-        // {
-        //     if(c[i-1][1]*c[i-2][0]*(c[i-2][0] - c[i][0]) != ((c[i-1][0]*c[i-2][1]*(c[i-2][0]-c[i][0]))+((c[i-2][0]*c[i][1]-c[i][0]*c[i-2][1])*(c[i-2][0]-c[i-1][0]))))
-        //         return false;
-        // }
-        // return true;
-        for(int i = 2; i< c.length; i++)
-        {
-            if(
-                c[i][1] * (c[0][0]-c[1][0]) !=
-                ((c[0][1] - c[1][1])*c[i][0]) + (c[0][0]*c[1][1] - c[1][0]*c[0][1])
-            )
-            return false;
+    public boolean checkStraightLine(int[][] coordinates) {
+        // m= y2-y1 / x2-x1
+         // System.out.println("General slope is :"+slope);
+        for(int i=2;i<coordinates.length;i++){
+            int x=coordinates[i][0];
+            int y= coordinates[i][1];
+            //Using doublePoint formula
+            if((coordinates[1][1]-coordinates[0][1])*(x-coordinates[0][0])!= (y-coordinates[0][1])*(coordinates[1][0]-coordinates[0][0])) return false;
         }
         return true;
     }
