@@ -10,14 +10,18 @@ class Solution {
     }
     static boolean isSelfDividing(int num)
     {
-        String sNum = String.valueOf(num);
-        for(int i = 0; i < sNum.length(); i++)
+        int digit;
+        int num1 = num;
+        do
         {
-            if((sNum.charAt(i) == '0'))
+            digit = num1%10;
+            if(digit == 0)
                 return false;
-            if((num % Integer.parseInt(String.valueOf(sNum.charAt(i))) != 0 ))
+            if(num%digit != 0)
                 return false;
+            num1 = num1/10;
         }
+        while(num1 != 0);
         return true;
     }
 }
